@@ -16,8 +16,6 @@ const connectionURl = "mongodb://localhost/27017"
 
 
 
-// const connectionURl =
-//   "mongodb+srv://admin:me2penders2000@cluster0.qxlah.mongodb.net?retryWrites=true&w=majority";
 const databaseName = "bwg";
 
 MongoClient.connect(
