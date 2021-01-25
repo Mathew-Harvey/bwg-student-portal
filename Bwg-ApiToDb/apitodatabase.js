@@ -6,8 +6,7 @@ const mongodb = require("mongodb");
 var acuity = AcuityScheduling.basic({
   //   userId: process.env.ACUITY_USER_ID,
   //   apiKey: process.env.ACUITY_API_KEY,
-  userId: "16696944",
-  apiKey: "36fa76dda4beb013aa48228da563f53f",
+
 });
 
 const MongoClient = mongodb.MongoClient;
@@ -16,8 +15,6 @@ const connectionURl = "mongodb://localhost/27017"
 
 
 
-// const connectionURl =
-//   "mongodb+srv://admin:me2penders2000@cluster0.qxlah.mongodb.net?retryWrites=true&w=majority";
 const databaseName = "bwg";
 
 MongoClient.connect(
