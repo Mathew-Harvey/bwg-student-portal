@@ -1,3 +1,3 @@
 module.exports = {
-    AppointmentConst: require("./bwg_model")
+    Appointment: require("./bwg_model")
   };

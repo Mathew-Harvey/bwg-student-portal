@@ -2,8 +2,7 @@ const mongoose = require("mongoose");
 
 const Schema = mongoose.Schema;
 
-let Appointment = Schema({
-
+let AppointmentSchema = new Schema({
     "_id": {
         "type": "Number"
     },
@@ -113,7 +112,8 @@ let Appointment = Schema({
         "type": "String"
     }
 
-});
+   
 
- const AppointmentConst = mongoose.model("Appointment", Appointment);
- module.exports = AppointmentConst;
+}, {collection: "Appointment"});
+ const Appointment = mongoose.model("Appointment", AppointmentSchema);
+ module.exports = Appointment;
