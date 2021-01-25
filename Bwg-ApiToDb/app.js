@@ -11,10 +11,9 @@ var express = require("express");
 // Create an instance of Acuity for accessing the API:
 
 var acuity = AcuityScheduling.basic({
-  //   userId: process.env.ACUITY_USER_ID,
-  //   apiKey: process.env.ACUITY_API_KEY,
-  userId: "16696944",
-  apiKey: "36fa76dda4beb013aa48228da563f53f",
+    userId: process.env.ACUITY_USER_ID,
+    apiKey: process.env.ACUITY_API_KEY,
+
 });
 
 // Create a new express server:
