@@ -29,8 +29,15 @@ connection.once("open", function () {
   // app.use(cors());
   app.listen(PORT, function () {
     console.log("Server is running on Port: " + PORT);
+
   });
 });
+
+
+//-------------------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------------
 
 app.get("/getData", (req, res) => {
   db.Appointment.find({}, (err, result) => {
@@ -45,9 +52,11 @@ app.get("/getData", (req, res) => {
 //all the appoints that bron has done?
 
 //WILL BE USER INPUT
-var firstName = "Nuri";
-var classType = "Bodyweight Class";
-
+var email = "nurievrita@gmail.com";
+const bodyweightClass = "Bodyweight Class";
+const mobilityClass = "Mobility";
+const caliClass = "Calisthenics";
+const begClass = "Beginner bodyweight strength and mobility";
 //variable function that takes todays date and lists out dates as a string for previous 7 days
 
 var date1 = moment().format("LL");
@@ -59,61 +68,113 @@ var date6 = moment().subtract(5, "days").format("LL");
 var date7 = moment().subtract(6, "days").format("LL");
 
 //================================
+//Promise functions to return values
+//================================
 
-app.get("/firstName", (req, res) => {
-  db.Appointment.find({ firstName: firstName }, (err, result) => {
+function totalBodyweightClass() {
+  Promise.all(
+    [db.Appointment.count({ email:email, type: bodyweightClass })],
+  ).then(([result]) => {
+    console.log(result);
+  });
+}
+function totalMobilityClass() {
+  Promise.all(
+    [db.Appointment.count({ email:email, type: mobilityClass })],
+  ).then(([result]) => {
+    console.log(result);
+  });
+}
+function totalCaliClass() {
+  Promise.all(
+    [db.Appointment.count({ email:email, type: caliClass })],
+  ).then(([result]) => {
+    console.log(result);
+  });
+}
+function totalBegClass() {
+  Promise.all(
+    [db.Appointment.count({ email:email, type: begClass })],
+  ).then(([result]) => {
+    console.log(result);
+  });
+}
+function weekTotalClass() {
+  Promise.all(
+    [db.Appointment.count({ email:email, date: { $in: [date1, date2, date3, date4, date5, date6, date7] } })],
+  ).then(([result]) => {
+    console.log(result);
+  });
+}
+function totalClass() {
+  Promise.all(
+    [db.Appointment.count({ email:email })],
+  ).then(([result]) => {
+    console.log(result);
+  });
+}
+totalBodyweightClass()
+totalMobilityClass()
+totalCaliClass()
+totalBegClass()
+weekTotalClass()
+totalClass()
+//================================
+// Routes to return values
+//================================
+app.get("/totalBodyweightClass", (req, res) => {
+  db.Appointment.count({email:email, type:bodyweightClass}, (err, result) => {
     if (err) {
-      res.send(err);
+      res.sendStatus(err);
     } else {
-      res.send(result);
+      res.json(result);
+    }
+  });
+});
+app.get("/totalMobilityClass", (req, res) => {
+  db.Appointment.count({email:email, type:mobilityClass}, (err, result) => {
+    if (err) {
+      res.sendStatus(err);
+    } else {
+      res.json(result);
+    }
+  });
+});
+app.get("/totalCaliClass", (req, res) => {
+  db.Appointment.count({email:email, type:caliClass}, (err, result) => {
+    if (err) {
+      res.sendStatus(err);
+    } else {
+      res.json(result);
+    }
+  });
+});
+app.get("/totalBegClass", (req, res) => {
+  db.Appointment.count({email:email, type:begClass}, (err, result) => {
+    if (err) {
+      res.sendStatus(err);
+    } else {
+      res.json(result);
+    }
+  });
+});
+app.get("/weekTotalClass", (req, res) => {
+  db.Appointment.count({email:email, date: { $in: [date1, date2, date3, date4, date5, date6, date7] }}, (err, result) => {
+    if (err) {
+      res.sendStatus(err);
+    } else {
+      res.json(result);
+    }
+  });
+});
+app.get("/totalClass", (req, res) => {
+  db.Appointment.count({email:email}, (err, result) => {
+    if (err) {
+      res.sendStatus(err);
+    } else {
+      res.json(result);
     }
   });
 });
 
-//how many bodywieght classes has bron done?
-
-app.get("/numberofclasses", (req, res) => {
-  db.Appointment.find(
-    { firstName: firstName, type: classType },
-    (err, result) => {
-      if (err) {
-        res.send(err);
-      } else {
-        res.json(result);
-      }
-    }
-  );
-});
-
-//ALl  Bodyweight Classes Nuri atteneded last week 
-
-app.get("/date", (req, res) => {
-  db.Appointment.count(
-    { firstName: firstName, type: classType, date: { $in: [date1, date2, date3, date4, date5, date6, date7] } },
-    (err, result) => {
-      if (err) {
-        res.send(err);
-      } else {
-        res.json(result);
-      }
-    }
-  );
-});
-
-//ALl   Classes Nuri atteneded last week 
-
-app.get("/date1", (req, res) => {
-  db.Appointment.count(
-    { firstName: firstName,  date: { $in: [date1, date2, date3, date4, date5, date6, date7] } },
-    (err, result) => {
-      if (err) {
-        res.send(err);
-      } else {
-        res.json(result);
-      }
-    }
-  );
-})
-
-//how many classes have i done? of what type
 
