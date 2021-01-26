@@ -9,6 +9,7 @@ const moment = require("moment");
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+app.use(cors())
 
 mongoose
   .connect(
