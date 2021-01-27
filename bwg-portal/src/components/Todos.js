@@ -7,14 +7,14 @@ export default function Todos() {
   const [todoText, setToDoText] = useState("");
   const [credentials] = useContext(CredentialsContext);
 
-  const persist = () => {
+  const persist = (newTodos) => {
     fetch(`http://localhost:3001/todos`, {
       method: "POST",
       headers: {
-        "Content-type": "application/json",
+        "Content-Type": "application/json",
         Authorization: `Basic ${credentials.username}:${credentials.password}`,
       },
-      body: JSON.stringify(todos),
+      body: JSON.stringify(newTodos),
     }).then(() => {});
   };
 
@@ -59,4 +59,4 @@ export default function Todos() {
   );
 }
 
-//https://youtu.be/X__rLNfTsLg?t=4256
+//https://www.youtube.com/watch?t=4256&v=X__rLNfTsLg&feature=youtu.be
