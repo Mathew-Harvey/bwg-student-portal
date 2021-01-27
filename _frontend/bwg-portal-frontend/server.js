@@ -38,6 +38,24 @@ app.post("/register", async (req, res) => {
     });
 });
 
+app.post("/login", async (req, res) => {
+    const { username, password } = req.body;
+    const user = await User.findOne({ username }).exec();
+    if (!user || user.password !== password) {
+        res.status(403);
+        res.json({
+            message: "invalid login",
+        });
+        return;
+    }
+    res.json({
+        massage:"success",
+        
+    });
+});
+
+
+
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function () {
