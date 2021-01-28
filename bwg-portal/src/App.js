@@ -1,42 +1,30 @@
-import React, { useState } from "react";
+import React from 'react';
+import 'office-ui-fabric-react/dist/css/fabric.css';
 import './App.css';
+import Navigation from "./components/Navigation"
+import CardsSection from "./components/CardsSection"
+import ClassAttendenceTable from "./components/ClassAttendenceTable"
 
 
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link,
-  useRouteMatch,
-  useParams
-} from "react-router-dom";
-import Register from "./pages/register"
-import Welcome from "./pages/welcome"
-import Login from "./pages/login"
 
-export const CredentialsContext = React.createContext();
-
-function App() {
-  const credentialsState = useState(null)
+function App(){
   return (
-    <div className="App">
-      <CredentialsContext.Provider value={credentialsState}>
-        <Router>
-          <Switch>
-            <Route exact path="/">
-              <Welcome />
-            </Route>
-            <Route exact path="/register">
-              <Register />
-            </Route>
-            <Route exact path="/login">
-              <Login />
-            </Route>
-          </Switch>
-        </Router>
-      </CredentialsContext.Provider>
+    <div className="ms-Grid" dir='ltr'>
+      <div className="ms-Grid-row">
+        <div className="ms-Grid-col ms-sm-1 ms-xl1">
+          <Navigation />
+        </div>
+        <div className="ms-Grid-col ms-sm11 ms-xl11 main-element">
+        <div className="ms-Grid-row">
+          <CardsSection />
+        </div>
+        <div className="ms-Grid-row">
+
+        </div>
+        </div>
+      </div>
     </div>
-  );
+  )
 }
 
 export default App;
