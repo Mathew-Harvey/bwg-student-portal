@@ -6,6 +6,7 @@ const mongoose = require("mongoose")
 const db = require("./src/models");
 const PORT = 3001
 const moment = require("moment");
+// const { default: Todos } = require("./src/components/Todos");
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -31,6 +32,8 @@ mongoose
   .catch(() => console.log("Not Connected"));
 
 const connection = mongoose.connection;
+
+
 
 //-------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------
@@ -65,13 +68,36 @@ app.post("/login", async (req, res) => {
         return;
     }
     res.json({
-        massage:"success",
+        message:"success",
         
     });
 });
 
-
-
+app.post("/todos", async (req, res) => {
+  const { authorization } = req.headers;
+  const [, token] = authorization.split(" ");
+  const [username, password] = token.split(":");
+  const todosItems = req.body;
+  const user = await db.User.findOne({ username }).exec();
+  if (!user || user.password !== password) {
+    res.status(403);
+    res.json({
+      message: "invalid access",
+    });
+    return;
+  }
+  const todos = await db.Todos.findOne({ userId: user._id }).exec();
+  if (!todos) {
+    await db.Todos.create({
+      userId: user._id,
+      todos: todosItems,
+    });
+  } else {
+    todos.todos = todosItems;
+    await todos.save();
+  }
+  res.json(todosItems);
+});
 
 connection.on('error', console.error.bind(console, 'connection error:'));
 connection.once('open', function () {
@@ -79,6 +105,8 @@ connection.once('open', function () {
         console.log("Server is running on Port: " + PORT);
     })
 });
+
+
 
 
 

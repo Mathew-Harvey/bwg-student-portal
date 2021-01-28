@@ -2,11 +2,15 @@ const mongoose = require("mongoose");
 
 const Schema = mongoose.Schema;
 
-const todosSchema = new mongoose.Schema({
-    id: String,
-    username: String,
-    password: String,
+const todosSchema = new Schema({
+  userId: String,
+    todos: [
+      {
+        checked:Boolean,
+        text: String
+      }
+    ],    
   }, {collection: "Todos"});
 
-const Todos = mongoose.model('Todos', userSchema);
+const Todos = mongoose.model('Todos', todosSchema);
  module.exports = Todos;
