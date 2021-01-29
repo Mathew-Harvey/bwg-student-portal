@@ -10,6 +10,7 @@ import ring from "../../assets/ring.png";
 
 
 
+
 const Sidebar = ({ sidebarOpen, closeSidebar }) => {
   return (
     <div className={sidebarOpen ? "sidebar_responsive" : ""} id="sidebar">
