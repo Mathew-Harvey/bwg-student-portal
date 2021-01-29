@@ -5,7 +5,7 @@ import Navbar from "./components/navbar/Navbar";
 import Sidebar from "./components/sidebar/Sidebar";
 
 
-const Hero = ({handleLogout}) => {
+const Dashboard = ({handleLogout}) => {
     const [sidebarOpen, setsidebarOpen] = useState(false);
     const openSidebar = () => {
         setsidebarOpen(true);
@@ -25,4 +25,4 @@ const Hero = ({handleLogout}) => {
     );
 };
 
-export default Hero;
+export default Dashboard;

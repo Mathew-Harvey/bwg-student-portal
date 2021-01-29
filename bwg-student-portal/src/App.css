@@ -10,10 +10,11 @@ button {
   outline: none;
   width: 100%;
   padding: 15px 0;
+  margin-bottom: 30px;
   color: #fff;
   font-size: 16px;
   letter-spacing: 1px;
-  background: #603bbb;
+  background: #3273DC;
   cursor: pointer;
 }
 

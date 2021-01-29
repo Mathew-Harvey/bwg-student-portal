@@ -39,50 +39,29 @@ const Main = () => {
         {/* <!-- MAIN CARDS STARTS HERE --> */}
         <div className="main__cards">
           <div className="card">
-            <i
-              className="fa fa-user-o fa-2x text-lightblue"
-              aria-hidden="true"
-            ></i>
+         
             <div className="card_inner">
-              <p className="text-primary-p">Number of Subscribers</p>
+              <p className="text-primary-p">Total Hours Trained</p>
               <span className="font-bold text-title">578</span>
             </div>
           </div>
 
           <div className="card">
-            <i className="fa fa-calendar fa-2x text-red" aria-hidden="true"></i>
+            
             <div className="card_inner">
-              <p className="text-primary-p">Times of Watching</p>
-              <span className="font-bold text-title">2467</span>
+              <p className="text-primary-p">Total Class past 7 days</p>
+              <span className="font-bold text-title">3</span>
             </div>
           </div>
 
           <div className="card">
-            <i
-              className="fa fa-video-camera fa-2x text-yellow"
-              aria-hidden="true"
-            ></i>
+        
             <div className="card_inner">
-              <p className="text-primary-p">Number of Videos</p>
+              <p className="text-primary-p">Next Membership Payment Due</p>
               <span className="font-bold text-title">340</span>
             </div>
-          </div>
-
-          <div className="card">
-            <i
-              className="fa fa-thumbs-up fa-2x text-green"
-              aria-hidden="true"
-            ></i>
-            <div className="card_inner">
-              <p className="text-primary-p">Number of Likes</p>
-              <span className="font-bold text-title">645</span>
-            </div>
-          </div>
+          </div>          
         </div>
-        {/* <!-- MAIN CARDS ENDS HERE --> */}
-
-       
-        {/* <!-- CHARTS ENDS HERE --> */}
       </div>
     </main>
   );

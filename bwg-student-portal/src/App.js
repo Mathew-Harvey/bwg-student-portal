@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 import fire from './fire'
 import Login from './login'
-import Hero from "./hero"
+import Dashboard from "./dashboard"
 
 
 
@@ -89,7 +89,7 @@ const App = () => {
   return (
     <div className="App">
       {user ? ( //if user exists render document 'hero' replace with dash board
-        <Hero handleLogout={handleLogout} />
+        <Dashboard handleLogout={handleLogout} />
       ) : ( // otherwise if use doesn't exist render log in page
           <Login
             email={email}

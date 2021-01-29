@@ -22,16 +22,13 @@ const Sidebar = ({ sidebarOpen, closeSidebar }) => {
         <i
           onClick={() => closeSidebar()}
           className="fa fa-times"
-          id="sidebarIcon"
+          id="sidebarIconClose"
           aria-hidden="true"
         ></i>
       </div>
 
       <div className="sidebar__menu">
-        <div className="sidebar__link active_menu_link">
-          <i className="fa fa-home"></i>
-          <a href="#">Dashboard</a>
-        </div>
+  
         <h2>Your Gym</h2>
         <div className="sidebar__link">
             <img id="sidebarIcon" src={bookclass} alt="bookclass" />   
@@ -59,11 +56,6 @@ const Sidebar = ({ sidebarOpen, closeSidebar }) => {
         <div className="sidebar__link">
         <img id="sidebarIcon" src={ring} alt="rings" />
           <a href="https://download-files.wixmp.com/ugd/7232a3_d660203a4be64ef1b8235a3bd00f0286.pdf?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ1cm46YXBwOmU2NjYzMGU3MTRmMDQ5MGFhZWExZjE0OWIzYjY5ZTMyIiwic3ViIjoidXJuOmFwcDplNjY2MzBlNzE0ZjA0OTBhYWVhMWYxNDliM2I2OWUzMiIsImF1ZCI6WyJ1cm46c2VydmljZTpmaWxlLmRvd25sb2FkIl0sImlhdCI6MTYxMTg5MzUxOCwiZXhwIjoxNjE0NDg1NTI4LCJqdGkiOiI0YmQ2YzJiMjVkOWYiLCJvYmoiOltbeyJwYXRoIjoiL3VnZC83MjMyYTNfZDY2MDIwM2E0YmU2NGVmMWI4MjM1YTNiZDAwZjAyODYucGRmIn1dXX0.oKMM32JjSm0C6MBewk-FEwGMCvNy0-m-yrs74BYEgUM&filename=Ring+Muscle+Up+Program.pdf">Ring Muscle Up </a>
-        </div>
-        
-        <div className="sidebar__logout">
-          <i className="fa fa-power-off"></i>
-          <a href="#">Log out</a>
         </div>
       </div>
     </div>

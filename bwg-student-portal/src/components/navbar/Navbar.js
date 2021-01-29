@@ -21,9 +21,6 @@ const Navbar = ({ sidebarOpen, openSidebar }) => {
         <a href="#">
           <i className="fa fa-chess-clock" aria-hidden="true" tooltip = "metronome"></i>
         </a>
-        <a href="#">
-          <i className="fa fa-power-off" aria-hidden="true"></i>
-        </a>
 
       </div>
     </nav>
