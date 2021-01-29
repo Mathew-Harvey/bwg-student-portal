@@ -78,42 +78,42 @@ app.get("/getData", (req, res) => {
   
   function totalBodyweightClass() {
     Promise.all(
-      [db.Appointment.count({ email:email, type: bodyweightClass })],
+      [db.Appointment.countDocuments({ email:email, type: bodyweightClass })],
     ).then(([result]) => {
       console.log(result);
     });
   }
   function totalMobilityClass() {
     Promise.all(
-      [db.Appointment.count({ email:email, type: mobilityClass })],
+      [db.Appointment.countDocuments({ email:email, type: mobilityClass })],
     ).then(([result]) => {
       console.log(result);
     });
   }
   function totalCaliClass() {
     Promise.all(
-      [db.Appointment.count({ email:email, type: caliClass })],
+      [db.Appointment.countDocuments({ email:email, type: caliClass })],
     ).then(([result]) => {
       console.log(result);
     });
   }
   function totalBegClass() {
     Promise.all(
-      [db.Appointment.count({ email:email, type: begClass })],
+      [db.Appointment.countDocuments({ email:email, type: begClass })],
     ).then(([result]) => {
       console.log(result);
     });
   }
   function weekTotalClass() {
     Promise.all(
-      [db.Appointment.count({ email:email, date: { $in: [date1, date2, date3, date4, date5, date6, date7] } })],
+      [db.Appointment.countDocuments({ email:email, date: { $in: [date1, date2, date3, date4, date5, date6, date7] } })],
     ).then(([result]) => {
       console.log(result);
     });
   }
   function totalClass() {
     Promise.all(
-      [db.Appointment.count({ email:email })],
+      [db.Appointment.countDocuments({ email:email })],
     ).then(([result]) => {
       console.log(result);
     });
@@ -128,7 +128,7 @@ app.get("/getData", (req, res) => {
   // Routes to return values
   //================================
   app.get("/totalBodyweightClass", (req, res) => {
-    db.Appointment.count({email:email, type:bodyweightClass}, (err, result) => {
+    db.Appointment.countDocuments({email:email, type:bodyweightClass}, (err, result) => {
       if (err) {
         res.sendStatus(err);
       } else {
@@ -137,7 +137,7 @@ app.get("/getData", (req, res) => {
     });
   });
   app.get("/totalMobilityClass", (req, res) => {
-    db.Appointment.count({email:email, type:mobilityClass}, (err, result) => {
+    db.Appointment.countDocuments({email:email, type:mobilityClass}, (err, result) => {
       if (err) {
         res.sendStatus(err);
       } else {
@@ -146,7 +146,7 @@ app.get("/getData", (req, res) => {
     });
   });
   app.get("/totalCaliClass", (req, res) => {
-    db.Appointment.count({email:email, type:caliClass}, (err, result) => {
+    db.Appointment.countDocuments({email:email, type:caliClass}, (err, result) => {
       if (err) {
         res.sendStatus(err);
       } else {
@@ -155,7 +155,7 @@ app.get("/getData", (req, res) => {
     });
   });
   app.get("/totalBegClass", (req, res) => {
-    db.Appointment.count({email:email, type:begClass}, (err, result) => {
+    db.Appointment.countDocuments({email:email, type:begClass}, (err, result) => {
       if (err) {
         res.sendStatus(err);
       } else {
@@ -164,7 +164,7 @@ app.get("/getData", (req, res) => {
     });
   });
   app.get("/weekTotalClass", (req, res) => {
-    db.Appointment.count({email:email, date: { $in: [date1, date2, date3, date4, date5, date6, date7] }}, (err, result) => {
+    db.Appointment.countDocuments({email:email, date: { $in: [date1, date2, date3, date4, date5, date6, date7] }}, (err, result) => {
       if (err) {
         res.sendStatus(err);
       } else {
@@ -173,7 +173,7 @@ app.get("/getData", (req, res) => {
     });
   });
   app.get("/totalClass", (req, res) => {
-    db.Appointment.count({email:email}, (err, result) => {
+    db.Appointment.countDocuments({email:email}, (err, result) => {
       if (err) {
         res.sendStatus(err);
       } else {
