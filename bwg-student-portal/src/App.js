@@ -16,7 +16,7 @@ const App = () => {
   const [emailError, setEmailError] = useState('');
   const [passwordError, setPasswordError] = useState('');
   const [hasAccount, setHasAccount] = useState(false);
-
+<Dashboard user={user} />
   const clearInputs = () => {
     setEmail('');
     setPassword('');
@@ -90,6 +90,7 @@ const App = () => {
     <div className="App">
       {user ? ( //if user exists render document 'hero' replace with dash board
         <Dashboard handleLogout={handleLogout} />
+        
       ) : ( // otherwise if use doesn't exist render log in page
           <Login
             email={email}
