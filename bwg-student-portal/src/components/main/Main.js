@@ -1,9 +1,9 @@
 import "./Main.css";
 import hello from "../../assets/hello.png";
-import Chart from "../charts/Chart";
+import Chart from "../charts/Chart"
 import Todos from "../todos/todos";
 
-const Main = (props) => {
+const Main = (props, {bodyweightClass, mobilityClass, caliClass, begClass, handstandClass}) => {
   return (
     <main>
       <div className="main__container">
@@ -12,7 +12,7 @@ const Main = (props) => {
         <div className="main__title">
           <img src={hello} alt="hello" />
           <div className="main__greeting">
-            <h1>{props.name}</h1>             
+            <h1>Hi {props.name} ! Welcome to your dashboard</h1>             
           </div>
         </div>
 
@@ -21,8 +21,6 @@ const Main = (props) => {
           <div className="charts__left">
             <h2>Training Tasks</h2>
             <div className="charts__left__title">
-              
-              <br />
               <Todos />
             </div>
           </div>
@@ -30,10 +28,20 @@ const Main = (props) => {
             <div className="charts__right__cards">
               <div>
                 <h1>Classes Attended</h1>
-                <p>more text here</p>
+                <p>bodyweight class {props.bodyweightClass}, 
+                mobility class {props.mobilityClass}, 
+                Cali class {props.caliClass}, 
+                NOTWORKING beginner Class {props.begClass},
+                Handstand Class {props.handstandClass}
+        
+                
+                </p>
               </div>
             </div>
-            <Chart />
+            <Chart
+              bodyweightClass={bodyweightClass}
+            
+            />
           </div>
         </div>
         {/* <!-- MAIN CARDS STARTS HERE --> */}
@@ -41,14 +49,14 @@ const Main = (props) => {
           <div className="card">
             <div className="card_inner">
               <p className="text-primary-p">Total Hours Trained</p>
-              <span className="font-bold text-title">578</span>
+              <span className="font-bold text-title">{props.hoursTrained}</span>
             </div>
           </div>
 
           <div className="card">
             <div className="card_inner">
               <p className="text-primary-p">Total Class past 7 days</p>
-              <span className="font-bold text-title">3</span>
+              <span className="font-bold text-title">{props.sevenDays}</span>
             </div>
           </div>
 

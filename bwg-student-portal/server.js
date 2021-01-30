@@ -106,16 +106,18 @@ app.get("/getData", (req, res) => {
   //-------------------------------------------------------------------------------------------
   //WILL BE USER INPUT
   //-------------------------------------------------------------------------------------------
-  var email = "nurievrita@gmail.com";
+  // var email = "nurievrita@gmail.com";
   const bodyweightClass = "Bodyweight Class";
   const mobilityClass = "Mobility";
   const caliClass = "Calisthenics";
   const begClass = "Beginner bodyweight strength and mobility";
+  const handstandClass = "Handstand Class"
   //-------------------------------------------------------------------------------------------
   //variable function that takes todays date and lists out dates as a string for previous 7 days
   //-------------------------------------------------------------------------------------------
   
   var date1 = moment().format("LL");
+  console.log(date1)
   var date2 = moment().subtract(1, "days").format("LL");
   var date3 = moment().subtract(2, "days").format("LL");
   var date4 = moment().subtract(3, "days").format("LL");
@@ -135,117 +137,63 @@ app.get("/username/:email", async (req, res, next) => {
   });
 })
 
-//-------------------------------------------------------------------------------------------
-  //Promise functions to return values
-//-------------------------------------------------------------------------------------------
-  
+app.get("/hourstrained/:email", async (req, res, next) => {
+  Promise.all(
+    [db.Appointment.countDocuments({ email:req.params.email })],
+  ).then((result) => {
+    return(res.json(result));
+  });
+})
+
+app.get("/sevendays/:email", async (req, res, next) => {
+  Promise.all(
+    [db.Appointment.countDocuments({ email:req.params.email, date: { $in: [date1, date2, date3, date4, date5, date6, date7] } })],
+    ).then((result) => {
+    return(res.json(result[0]));
+  });
+})
+
+app.get("/bodyweightClass/:email", async (req, res, next) => {
+  Promise.all(
+    [db.Appointment.countDocuments({ email:req.params.email, type: bodyweightClass })],
+    ).then((result) => {
+    return(res.json(result[0]));
+  });
+})
+
+app.get("/mobilityClass/:email", async (req, res, next) => {
+  Promise.all(
+    [db.Appointment.countDocuments({ email:req.params.email, type: mobilityClass })],
+    ).then((result) => {
+    return(res.json(result[0]));
+  });
+})
+
+app.get("/caliClass/:email", async (req, res, next) => {
+  Promise.all(
+    [db.Appointment.countDocuments({ email:req.params.email, type: caliClass })],
+    ).then((result) => {
+    return(res.json(result[0]));
+  });
+})
 
 
-  function totalBodyweightClass() {
-    Promise.all(
-      [db.Appointment.countDocuments({ email:email, type: bodyweightClass })],
-    ).then(([result]) => {
-      console.log(result);
-    });
-  }
-  function totalMobilityClass() {
-    Promise.all(
-      [db.Appointment.countDocuments({ email:email, type: mobilityClass })],
-    ).then(([result]) => {
-      console.log(result);
-    });
-  }
-  function totalCaliClass() {
-    Promise.all(
-      [db.Appointment.countDocuments({ email:email, type: caliClass })],
-    ).then(([result]) => {
-      console.log(result);
-    });
-  }
-  function totalBegClass() {
-    Promise.all(
-      [db.Appointment.countDocuments({ email:email, type: begClass })],
-    ).then(([result]) => {
-      console.log(result);
-    });
-  }
-  function weekTotalClass() {
-    Promise.all(
-      [db.Appointment.countDocuments({ email:email, date: { $in: [date1, date2, date3, date4, date5, date6, date7] } })],
-    ).then(([result]) => {
-      console.log(result);
-    });
-  }
-  function totalClass() {
-    Promise.all(
-      [db.Appointment.countDocuments({ email:email })],
-    ).then(([result]) => {
-      console.log(result);
-    });
-  }
-  totalBodyweightClass()
-  totalMobilityClass()
-  totalCaliClass()
-  totalBegClass()
-  weekTotalClass()
-  totalClass()
-  //-------------------------------------------------------------------------------------------
-  // Routes to return values
- //-------------------------------------------------------------------------------------------
-  app.get("/totalBodyweightClass", (req, res) => {
-    db.Appointment.countDocuments({email:email, type:bodyweightClass}, (err, result) => {
-      if (err) {
-        res.sendStatus(err);
-      } else {
-        res.json(result);
-      }
-    });
+//NOT WORKING
+app.get("/begClass/:email", async (req, res, next) => {
+  Promise.all(
+    [db.Appointment.countDocuments({ email:req.params.email, type: begClass })],
+    ).then((result) => {
+    return(res.json(result[0]));
   });
-  app.get("/totalMobilityClass", (req, res) => {
-    db.Appointment.countDocuments({email:email, type:mobilityClass}, (err, result) => {
-      if (err) {
-        res.sendStatus(err);
-      } else {
-        res.json(result);
-      }
-    });
+})
+
+app.get("/handstandClass/:email", async (req, res, next) => {
+  Promise.all(
+    [db.Appointment.countDocuments({ email:req.params.email, type: handstandClass })],
+    ).then((result) => {
+    return(res.json(result[0]));
   });
-  app.get("/totalCaliClass", (req, res) => {
-    db.Appointment.countDocuments({email:email, type:caliClass}, (err, result) => {
-      if (err) {
-        res.sendStatus(err);
-      } else {
-        res.json(result);
-      }
-    });
-  });
-  app.get("/totalBegClass", (req, res) => {
-    db.Appointment.countDocuments({email:email, type:begClass}, (err, result) => {
-      if (err) {
-        res.sendStatus(err);
-      } else {
-        res.json(result);
-      }
-    });
-  });
-  app.get("/weekTotalClass", (req, res) => {
-    db.Appointment.countDocuments({email:email, date: { $in: [date1, date2, date3, date4, date5, date6, date7] }}, (err, result) => {
-      if (err) {
-        res.sendStatus(err);
-      } else {
-        res.json(result);
-      }
-    });
-  });
-  app.get("/totalClass", (req, res) => {
-    db.Appointment.countDocuments({email:email}, (err, result) => {
-      if (err) {
-        res.sendStatus(err);
-      } else {
-        res.json(result);
-      }
-    });
-  });
+})
   
 //-------------------------------------------------------------------------------------------
 // Connect Server
