@@ -32,15 +32,63 @@ mongoose
   .catch(() => console.log("Not Connected"));
 
 const connection = mongoose.connection;
-
-
-
-
-
-
-
 //-------------------------------------------------------------------------------------------
+// todo list end points
 //-------------------------------------------------------------------------------------------
+function success(res, payload) {
+  return res.status(200).json(payload)
+}
+
+app.get("/todos", async (req, res, next) => {
+  try {
+    const todos = await db.Todo.find({})
+    return success(res, todos)
+  } catch (err) {
+    next({ status: 400, message: "failed to get todos" })
+  }
+})
+
+app.post("/todos", async (req, res, next) => {
+  try {
+    const todo = await db.Todo.create(req.body)
+    return success(res, todo)
+  } catch (err) {
+    console.log(err)
+    next({ status: 400, message: "failed to create todo" })
+  }
+})
+
+app.put("/todos/:id", async (req, res, next) => {
+  try {
+    const todo = await db.Todo.findByIdAndUpdate(req.params.id, req.body, {
+      new: true,
+    })
+    return success(res, todo)
+  } catch (err) {
+    next({ status: 400, message: "failed to update todo" })
+  }
+})
+app.delete("/todos/:id", async (req, res, next) => {
+  try {
+    await db.Todo.findByIdAndRemove(req.params.id)
+    return success(res, "todo deleted!")
+  } catch (err) {
+    next({ status: 400, message: "failed to delete todo" })
+  }
+})
+
+app.use((err, req, res, next) => {
+  return res.status(err.status || 400).json({
+    status: err.status || 400,
+    message: err.message || "there was an error processing request",
+  })
+})
+
+
+
+
+
+
 //-------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------
 
@@ -54,15 +102,18 @@ app.get("/getData", (req, res) => {
     });
   });
   
-  //all the appoints that bron has done?
   
+  //-------------------------------------------------------------------------------------------
   //WILL BE USER INPUT
+  //-------------------------------------------------------------------------------------------
   var email = "nurievrita@gmail.com";
   const bodyweightClass = "Bodyweight Class";
   const mobilityClass = "Mobility";
   const caliClass = "Calisthenics";
   const begClass = "Beginner bodyweight strength and mobility";
+  //-------------------------------------------------------------------------------------------
   //variable function that takes todays date and lists out dates as a string for previous 7 days
+  //-------------------------------------------------------------------------------------------
   
   var date1 = moment().format("LL");
   var date2 = moment().subtract(1, "days").format("LL");
@@ -72,10 +123,24 @@ app.get("/getData", (req, res) => {
   var date6 = moment().subtract(5, "days").format("LL");
   var date7 = moment().subtract(6, "days").format("LL");
   
-  //================================
+//-------------------------------------------------------------------------------------------
+  //api to accept log in email address and query servery
+//-------------------------------------------------------------------------------------------
+
+app.get("/username/:email", async (req, res, next) => {
+  Promise.all(
+    [db.Appointment.findOne({ email:req.params.email })],
+  ).then((result) => {
+    return(res.json(result[0]));
+  });
+})
+
+//-------------------------------------------------------------------------------------------
   //Promise functions to return values
-  //================================
+//-------------------------------------------------------------------------------------------
   
+
+
   function totalBodyweightClass() {
     Promise.all(
       [db.Appointment.countDocuments({ email:email, type: bodyweightClass })],
@@ -124,9 +189,9 @@ app.get("/getData", (req, res) => {
   totalBegClass()
   weekTotalClass()
   totalClass()
-  //================================
+  //-------------------------------------------------------------------------------------------
   // Routes to return values
-  //================================
+ //-------------------------------------------------------------------------------------------
   app.get("/totalBodyweightClass", (req, res) => {
     db.Appointment.countDocuments({email:email, type:bodyweightClass}, (err, result) => {
       if (err) {
@@ -182,3 +247,9 @@ app.get("/getData", (req, res) => {
     });
   });
   
+//-------------------------------------------------------------------------------------------
+// Connect Server
+//-------------------------------------------------------------------------------------------
+  app.listen(PORT, () => {
+    console.log(`listening on port ${PORT}`)
+  })

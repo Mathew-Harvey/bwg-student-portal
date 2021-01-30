@@ -62,8 +62,8 @@ main {
   .charts {
     display: grid;
     grid-template-columns: 1fr 3fr;
-    gap: 30px;
-    margin-top: 50px;
+    gap: 15px;
+    margin-top: 1px;
   }
   
   .charts__left {

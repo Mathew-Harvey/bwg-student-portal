@@ -5,7 +5,7 @@ import Navbar from "./components/navbar/Navbar";
 import Sidebar from "./components/sidebar/Sidebar";
 
 
-const Dashboard = ({handleLogout}, user) => {
+const Dashboard = ({handleLogout, name}) => {
     const [sidebarOpen, setsidebarOpen] = useState(false);
     const openSidebar = () => {
         setsidebarOpen(true);
@@ -20,7 +20,7 @@ const Dashboard = ({handleLogout}, user) => {
             <button onClick={handleLogout}>Logout</button>
             <Navbar sidebarOpen={sidebarOpen} openSidebar={openSidebar} />
 
-            <Main />
+            <Main name={name} />
             <Sidebar sidebarOpen={sidebarOpen} closeSidebar={closeSidebar} />
         </div>
     );

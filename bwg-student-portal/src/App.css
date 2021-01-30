@@ -18,6 +18,7 @@ button {
   cursor: pointer;
 }
 
+
 .login {
   width: 100%;
   min-height: 100vh;
@@ -38,8 +39,8 @@ button {
   background: radial-gradient(
     ellipse at left bottom,
     rgba(22, 24, 47, 1) 0%,
-    rgba(38, 20, 72, 0.9) 59%,
-    rgba(17, 27, 75, 0.9) 100%
+    rgba(80, 82, 116, 0.9) 59%,
+    rgba(46, 73, 207, 0.9) 100%
   );
   box-shadow: 0 50px 70px -20px rgba(0, 0, 0, 0.8);
 }
@@ -58,7 +59,7 @@ button {
   outline: none;
   font-size: 19px;
   padding: 10px;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.39);
   color: #fff;
   letter-spacing: 1px;
 }
@@ -104,7 +105,7 @@ button {
 }
 
 .hero nav {
-  background: #603bbb;
+  background: #3b5dbb;
   width: 100%;
   padding: 20px 40px;
   display: flex;
@@ -119,5 +120,5 @@ button {
 .hero nav button {
   width: 86px;
   padding: 8px 0;
-  background: #3a2b58;
+  background: #6474a5;
 }
