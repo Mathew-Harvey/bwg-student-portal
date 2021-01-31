@@ -2,8 +2,10 @@ import "./Main.css";
 import hello from "../../assets/hello.png";
 import Chart from "../charts/Chart"
 import Todos from "../todos/todos";
+import StopWatch from "../stopwatch/stopwatch";
 
-const Main = (props, {bodyweightClass, mobilityClass, caliClass, begClass, handstandClass}) => {
+const Main = (props, {bodyweightClass}) => {
+
   return (
     <main>
       <div className="main__container">
@@ -33,15 +35,15 @@ const Main = (props, {bodyweightClass, mobilityClass, caliClass, begClass, hands
                 Cali class {props.caliClass}, 
                 NOTWORKING beginner Class {props.begClass},
                 Handstand Class {props.handstandClass}
-        
+        <Chart 
+          bodyweightClass={bodyweightClass}
+
+        />
                 
                 </p>
               </div>
             </div>
-            <Chart
-              bodyweightClass={bodyweightClass}
-            
-            />
+
           </div>
         </div>
         {/* <!-- MAIN CARDS STARTS HERE --> */}
@@ -60,12 +62,11 @@ const Main = (props, {bodyweightClass, mobilityClass, caliClass, begClass, hands
             </div>
           </div>
 
-          <div className="card">
-            <div className="card_inner">
-              <p className="text-primary-p">Next Membership Payment Due</p>
-              <span className="font-bold text-title">340</span>
-            </div>
-          </div>
+     
+              
+              
+              
+      
         </div>
       </div>
     </main>

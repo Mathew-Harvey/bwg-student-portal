@@ -1,8 +1,19 @@
+// Questions:
+
+// passing values to graph, why undefined? How to do
+// Associated todo's with email address anmd then load todo's on authenitication
+
+
+
+
+
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import fire from "./fire";
 import Login from "./login";
 import Dashboard from "./dashboard";
+import Chart from "./components/charts/Chart"
+import sidebar from "./components/sidebar/Sidebar"
 
 
 const App = () => {
@@ -81,7 +92,6 @@ const App = () => {
 
   const authListener = () => {
     fire.auth().onAuthStateChanged((user) => {
-      console.log(user)
       if (user) {
         clearInputs();
         setUser(user);
@@ -119,6 +129,7 @@ const App = () => {
           });
         });
         //total bodyweight classes attended
+        
         fetch("http://localhost:3001/bodyweightClass/" + user.email).then((res) => {
           res.json().then((data) => {
             if (data) {

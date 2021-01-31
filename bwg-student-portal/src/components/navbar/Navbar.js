@@ -1,5 +1,8 @@
 import "./Navbar.css";
 import avatar from "../../assets/avatar.jpg";
+import StopWatch from "../stopwatch/stopwatch"
+
+
 
 const Navbar = ({ sidebarOpen, openSidebar }) => {
   return (
@@ -18,6 +21,7 @@ const Navbar = ({ sidebarOpen, openSidebar }) => {
         <a href="#">
           <i className="fa fa-stopwatch" aria-hidden="true"></i>
         </a>
+      
         <a href="#">
           <i className="fa fa-chess-clock" aria-hidden="true" tooltip = "metronome"></i>
         </a>

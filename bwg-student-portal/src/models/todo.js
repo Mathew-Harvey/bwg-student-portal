@@ -1,16 +1,16 @@
 
 const mongoose = require("mongoose") 
 
-const todoSchema = new mongoose.Schema({
- 
-  task: {
-   
+const todoSchema = new mongoose.Schema({ 
+  "email": {
+    "type": "String"
+}, 
+  task: {   
     type: String, 
     unique: true, 
     required: true, 
   },
   completed: {
-
     type: Boolean, 
     default: false, 
   },

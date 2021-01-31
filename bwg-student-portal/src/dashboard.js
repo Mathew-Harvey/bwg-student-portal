@@ -1,9 +1,9 @@
 import { useState } from "react";
 import "./App.css";
 import Main from "./components/main/Main";
+import Chart from "./components/charts/Chart"
 import Navbar from "./components/navbar/Navbar";
 import Sidebar from "./components/sidebar/Sidebar";
-import Chart from "./components/charts/Chart"
 
 
 const Dashboard = ({ handleLogout, name, hoursTrained, sevenDays, bodyweightClass, mobilityClass, caliClass, begClass, handstandClass }) => {
@@ -18,12 +18,13 @@ const Dashboard = ({ handleLogout, name, hoursTrained, sevenDays, bodyweightClas
 
         <div className="container">
 
-            <button onClick={handleLogout}>Logout</button>
+            
             <Navbar
                 sidebarOpen={sidebarOpen}
                 openSidebar={openSidebar}
 
             />
+           
             <Main
                 name={name}
                 hoursTrained={hoursTrained}
@@ -33,6 +34,7 @@ const Dashboard = ({ handleLogout, name, hoursTrained, sevenDays, bodyweightClas
                 caliClass={caliClass}
                 begClass={begClass}
                 handstandClass={handstandClass}
+                
 
             />
             <Sidebar

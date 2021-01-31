@@ -3,6 +3,14 @@ main {
     grid-area: main;
     overflow-y: auto;
   }
+
+  .button {
+    display:block;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    border: 1px solid red;
+  }
   
   .main__container {
     padding: 20px 35px;

@@ -1,0 +1,48 @@
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: flexbox;
+  font-family: "Avenir", sans-serif;
+}
+
+.showcase {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: blue;
+  min-height: 350px;
+  text-align: center;
+}
+  
+  .timer {
+    font-family: monospace;
+    letter-spacing: 2px;
+    font-size: 42px;
+    font-weight: bold;
+    color: white;
+    text-shadow: 2px 2px 0px rgba(gray, 0.5);
+    margin-bottom: 30px;
+  }
+  
+  .button {
+    display: block;
+    outline: none;
+    border: none;
+    width: 175px;
+    height: 50px;
+    margin: 10px auto;
+    font-size: 14px;
+    font-weight: 100;
+    line-height: 52px;
+    border-radius: 40px;
+    box-shadow: 2px 4px 8px rgba(black, 0.1);
+    transition: all 0.1s ease-out;
+    background-color: blue;
+    color: blue;
+    
+    
+  }
+
