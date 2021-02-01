@@ -3,17 +3,19 @@ import React, { useState, useEffect } from "react"
 import "./todos.css"
 import APIHelper from "./APIHelper.js"
 
-function Todos() {
+function Todos(props) {
   const [todos, setTodos] = useState([])
   const [todo, setTodo] = useState("")
+  
 
   useEffect(() => {
     const fetchTodoAndSetTodos = async () => {
-      const todos = await APIHelper.getAllTodos()
+      const todos = await APIHelper.getAllTodos(props.email)
+      console.log(todos)
       setTodos(todos)
     }
     fetchTodoAndSetTodos()
-  }, [])
+  }, [props.email])
 
   const createTodo = async e => {
     e.preventDefault()
@@ -25,7 +27,9 @@ function Todos() {
       alert(`Task: ${todo} already exists`)
       return
     }
-    const newTodo = await APIHelper.createTodo(todo)
+
+    console.log(props.email)
+    const newTodo = await APIHelper.createTodo(todo, props.email)
     setTodos([...todos, newTodo])
   }
 
@@ -45,7 +49,7 @@ function Todos() {
     const updatedTodo = await APIHelper.updateTodo(id, payload)
     setTodos(todos.map(todo => (todo._id === id ? updatedTodo : todo)))
   }
-
+console.log(todos)
   return (
     <div className="App">
       <div>
@@ -61,15 +65,15 @@ function Todos() {
       </div>
 
       <ul>
-        {todos.map(({ _id, task, completed }, i) => (
+        {todos.map(({ _id, task, completed }) => { return (
           <li
-            key={i}
+            key={_id}
             onClick={e => updateTodo(e, _id)}
             className={completed ? "completed" : ""}
           >
             {task} <span onClick={e => deleteTodo(e, _id)}>X</span>
           </li>
-        ))}
+        )})}
       </ul>
     </div>
   )

@@ -4,8 +4,8 @@ import Chart from "../charts/Chart"
 import Todos from "../todos/todos";
 import StopWatch from "../stopwatch/stopwatch";
 
-const Main = (props, {bodyweightClass}) => {
-
+const Main = (props) => {
+console.log(props.email)
   return (
     <main>
       <div className="main__container">
@@ -18,12 +18,14 @@ const Main = (props, {bodyweightClass}) => {
           </div>
         </div>
 
-        {/* <!-- CHARTS STARTS HERE --> */}
+    
         <div className="charts">
           <div className="charts__left">
             <h2>Training Tasks</h2>
             <div className="charts__left__title">
-              <Todos />
+              <Todos 
+              email={props.email}
+              />
             </div>
           </div>
           <div className="charts__right">
@@ -33,11 +35,14 @@ const Main = (props, {bodyweightClass}) => {
                 <p>bodyweight class {props.bodyweightClass}, 
                 mobility class {props.mobilityClass}, 
                 Cali class {props.caliClass}, 
-                NOTWORKING beginner Class {props.begClass},
+                beginner Class {props.begClass},
                 Handstand Class {props.handstandClass}
         <Chart 
-          bodyweightClass={bodyweightClass}
-
+          bodyweightClass={props.bodyweightClass}
+          mobilityClass={props.mobilityClass}
+          caliClass={props.caliClass}
+          begClass={props.begClass}
+          handstandClass={props.handstandClass}
         />
                 
                 </p>

@@ -1,23 +1,17 @@
 import React from 'react';
-import {Bar} from 'react-chartjs-2'
+import {Bar, Pie} from 'react-chartjs-2'
 import Main from '../main/Main'
 
-const Chart = (props,) => {
+const Chart = (props) => {
 
   return (
-    <div> <Bar 
-      
-         
-   
+    <div> <Pie 
             data = {{
-              labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+              labels: ['Bodyweight', 'Mobility', 'Calisthenics', 'Beginner', 'Handstand'],
         datasets: [{
-            label: '# of Votes',
+            label: 'Which Class Do I Like the Most?',
 
-            //this doesn't work WHY IS IT UNDEFINDED!!
-
-
-            data: [props.bodyweightClass, 12, 19, 3, 5, 2, 3],
+            data: [props.bodyweightClass, props.mobilityClass, props.caliClass, props.begClass, props.handstandClass],
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',

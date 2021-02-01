@@ -6,7 +6,7 @@ import Navbar from "./components/navbar/Navbar";
 import Sidebar from "./components/sidebar/Sidebar";
 
 
-const Dashboard = ({ handleLogout, name, hoursTrained, sevenDays, bodyweightClass, mobilityClass, caliClass, begClass, handstandClass }) => {
+const Dashboard = ({ handleLogout,email, name, hoursTrained, sevenDays, bodyweightClass, mobilityClass, caliClass, begClass, handstandClass }) => {
     const [sidebarOpen, setsidebarOpen] = useState(false);
     const openSidebar = () => {
         setsidebarOpen(true);
@@ -14,6 +14,7 @@ const Dashboard = ({ handleLogout, name, hoursTrained, sevenDays, bodyweightClas
     const closeSidebar = () => {
         setsidebarOpen(false);
     };
+    console.log(email)
     return (
 
         <div className="container">
@@ -27,6 +28,7 @@ const Dashboard = ({ handleLogout, name, hoursTrained, sevenDays, bodyweightClas
            
             <Main
                 name={name}
+                email={email}
                 hoursTrained={hoursTrained}
                 sevenDays={sevenDays}
                 bodyweightClass={bodyweightClass}

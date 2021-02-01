@@ -2,9 +2,11 @@ import axios from "axios"
 
 const API_URL = "http://localhost:3001/todos/"
 
-async function createTodo(task) {
+async function createTodo(task, email) {
+  console.log(email)
   const { data: newTodo } = await axios.post(API_URL, {
-    task,
+    task, 
+    email,
   })
   return newTodo
 }
@@ -19,8 +21,9 @@ async function updateTodo(id, payload) {
   return newTodo
 }
 
-async function getAllTodos() {
-  const { data: todos } = await axios.get(API_URL)
+async function getAllTodos(email) {
+  console.log(email)
+  const { data: todos } = await axios.get(API_URL + email)
   return todos
 }
 

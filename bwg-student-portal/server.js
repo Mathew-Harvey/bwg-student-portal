@@ -48,6 +48,21 @@ app.get("/todos", async (req, res, next) => {
   }
 })
 
+//api for getting todo's with specific email
+
+app.get("/todos/:email", async (req, res, next) => {  
+  try {
+    const todo = await db.Todo.find({email:req.params.email})
+    return success(res, todo)
+  } catch (err) {
+    console.log(err)
+    next({ status: 400, message: "failed to create todo" })
+  }
+
+})
+
+//========================
+
 app.post("/todos", async (req, res, next) => {
   try {
     const todo = await db.Todo.create(req.body)

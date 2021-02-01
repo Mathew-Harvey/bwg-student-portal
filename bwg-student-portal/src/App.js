@@ -94,13 +94,14 @@ const App = () => {
   const authListener = () => {
     fire.auth().onAuthStateChanged((user) => {
       if (user) {
-        clearInputs();
+        // clearInputs();
         setUser(user);
+        console.log(user)
+        setEmail(user.email)
 
         fetch("http://localhost:3001/username/" + user.email).then((res) => {
           res.json().then((data) => {
             if (data) {
-              clearInputs()
               setName(data.firstName)
             } else {
               setUser("")
@@ -111,10 +112,11 @@ const App = () => {
         fetch("http://localhost:3001/hourstrained/" + user.email).then((res) => {
           res.json().then((data) => {
             if (data) {
-              clearInputs()
+              // clearInputs()
               setHoursTrained(data)
             } else {
-              setUser("")
+              setUser(user)
+              setHoursTrained(0)
             }
           });
         });
@@ -122,10 +124,11 @@ const App = () => {
         fetch("http://localhost:3001/sevendays/" + user.email).then((res) => {
           res.json().then((data) => {
             if (data) {
-              clearInputs()
+              // clearInputs()
               setSevenDays(data)
             } else {
-              setUser("")
+              setUser(user)
+              setSevenDays(0)
             }
           });
         });
@@ -134,10 +137,11 @@ const App = () => {
         fetch("http://localhost:3001/bodyweightClass/" + user.email).then((res) => {
           res.json().then((data) => {
             if (data) {
-              clearInputs()
+              // clearInputs()
               setBodyweightClass(data)
             } else {
-              setUser("")
+              setUser(user)
+              setBegClass(0)
             }
           });
         });
@@ -147,34 +151,37 @@ const App = () => {
         fetch("http://localhost:3001/mobilityClass/" + user.email).then((res) => {
           res.json().then((data) => {
             if (data) {
-              clearInputs()
+              // clearInputs()
               setMobilityClass(data)
             } else {
-              setUser("")
+              setUser(user)
+              setMobilityClass(0)
             }
           });
         });
 
-        //total beginner bodyweight classes attended 
-        // fetch("http://localhost:3001/begClass/" + user.email).then((res) => {
-        //   res.json().then((data) => {
-        //     if (data) {
-        //       clearInputs()
-        //       setBegClass(data)
-        //     } else {
-        //       setUser("")
-        //     }
-        //   });
-        // });
+        // total beginner bodyweight classes attended 
+        fetch("http://localhost:3001/begClass/" + user.email).then((res) => {
+          res.json().then((data) => {
+            if (data) {
+              // clearInputs()
+              setBegClass(data)
+            } else {
+              setUser(user)
+              setBegClass(0)
+            }
+          });
+        });
 
         //total cali classes attended 
         fetch("http://localhost:3001/caliClass/" + user.email).then((res) => {
           res.json().then((data) => {
             if (data) {
-              clearInputs()
+              // clearInputs()
               setCaliClass(data)
             } else {
-              setUser("")
+              setUser(user)
+              setCaliClass(0)
             }
           });
         });
@@ -183,16 +190,14 @@ const App = () => {
         fetch("http://localhost:3001/handstandClass/" + user.email).then((res) => {
           res.json().then((data) => {
             if (data) {
-              clearInputs()
+              // clearInputs()
               setHandstandClass(data)
             } else {
-              setUser("")
+              setUser(user)
+              setHandstandClass(0)
             }
           });
         });
-
-
-
 
       } else {
         setUser("");
@@ -206,13 +211,14 @@ const App = () => {
   }, []);
 
   //login screen
-
+console.log(email)
   return (
     <div className="App">
       {user ? ( //if user exists render document 'hero' replace with dash board
         <Dashboard
           handleLogout={handleLogout}
           name={name}
+          email={email}
           hoursTrained={hoursTrained}
           bodyweightClass={bodyweightClass}
           sevenDays={sevenDays}
@@ -224,7 +230,7 @@ const App = () => {
       ) : (
           // otherwise if use doesn't exist render log in page
           <Login
-            email={email}
+            email={email}            
             setEmail={setEmail}
             password={password}
             setPassword={setPassword}
