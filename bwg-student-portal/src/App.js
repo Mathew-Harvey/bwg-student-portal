@@ -1,5 +1,6 @@
 // Questions:
 
+// if student has a zero returned for a particular class type, app doesn't log in, need error catch??
 // passing values to graph, why undefined? How to do
 // Associated todo's with email address anmd then load todo's on authenitication
 
