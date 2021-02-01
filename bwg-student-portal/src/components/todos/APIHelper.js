@@ -1,6 +1,6 @@
 import axios from "axios"
 
-const API_URL = "http://localhost:3001/todos/"
+const API_URL = "/todos/"
 
 async function createTodo(task, email) {
   console.log(email)

@@ -1,9 +1,7 @@
 // Questions:
 
-// if student has a zero returned for a particular class type, app doesn't log in, need error catch??
-// passing values to graph, why undefined? How to do
-// Associated todo's with email address anmd then load todo's on authenitication
-
+//investigate i frame
+//draggable div
 
 
 
@@ -99,7 +97,7 @@ const App = () => {
         console.log(user)
         setEmail(user.email)
 
-        fetch("http://localhost:3001/username/" + user.email).then((res) => {
+        fetch("/username/" + user.email).then((res) => {
           res.json().then((data) => {
             if (data) {
               setName(data.firstName)
@@ -109,7 +107,7 @@ const App = () => {
           });
         });
         //total classes attended
-        fetch("http://localhost:3001/hourstrained/" + user.email).then((res) => {
+        fetch("/hourstrained/" + user.email).then((res) => {
           res.json().then((data) => {
             if (data) {
               // clearInputs()
@@ -121,7 +119,7 @@ const App = () => {
           });
         });
         //total classes attended in the last 7 days
-        fetch("http://localhost:3001/sevendays/" + user.email).then((res) => {
+        fetch("/sevendays/" + user.email).then((res) => {
           res.json().then((data) => {
             if (data) {
               // clearInputs()
@@ -134,7 +132,7 @@ const App = () => {
         });
         //total bodyweight classes attended
         
-        fetch("http://localhost:3001/bodyweightClass/" + user.email).then((res) => {
+        fetch("/bodyweightClass/" + user.email).then((res) => {
           res.json().then((data) => {
             if (data) {
               // clearInputs()
@@ -148,7 +146,7 @@ const App = () => {
 
 
         // total mobility classes attended 
-        fetch("http://localhost:3001/mobilityClass/" + user.email).then((res) => {
+        fetch("/mobilityClass/" + user.email).then((res) => {
           res.json().then((data) => {
             if (data) {
               // clearInputs()
@@ -161,7 +159,7 @@ const App = () => {
         });
 
         // total beginner bodyweight classes attended 
-        fetch("http://localhost:3001/begClass/" + user.email).then((res) => {
+        fetch("/begClass/" + user.email).then((res) => {
           res.json().then((data) => {
             if (data) {
               // clearInputs()
@@ -174,7 +172,7 @@ const App = () => {
         });
 
         //total cali classes attended 
-        fetch("http://localhost:3001/caliClass/" + user.email).then((res) => {
+        fetch("/caliClass/" + user.email).then((res) => {
           res.json().then((data) => {
             if (data) {
               // clearInputs()
@@ -187,7 +185,7 @@ const App = () => {
         });
 
         //total handstand classes attended 
-        fetch("http://localhost:3001/handstandClass/" + user.email).then((res) => {
+        fetch("/handstandClass/" + user.email).then((res) => {
           res.json().then((data) => {
             if (data) {
               // clearInputs()
