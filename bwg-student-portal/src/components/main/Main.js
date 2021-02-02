@@ -32,11 +32,7 @@ console.log(props.email)
             <div className="charts__right__cards">
               <div>
                 <h1>Classes Attended</h1>
-                <p>bodyweight class {props.bodyweightClass}, 
-                mobility class {props.mobilityClass}, 
-                Cali class {props.caliClass}, 
-                beginner Class {props.begClass},
-                Handstand Class {props.handstandClass}
+                
         <Chart 
           bodyweightClass={props.bodyweightClass}
           mobilityClass={props.mobilityClass}
@@ -45,7 +41,7 @@ console.log(props.email)
           handstandClass={props.handstandClass}
         />
                 
-                </p>
+               
               </div>
             </div>
 
