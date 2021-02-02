@@ -6,12 +6,11 @@ import APIHelper from "./APIHelper.js"
 function Todos(props) {
   const [todos, setTodos] = useState([])
   const [todo, setTodo] = useState("")
-  
+
 
   useEffect(() => {
     const fetchTodoAndSetTodos = async () => {
       const todos = await APIHelper.getAllTodos(props.email)
-      console.log(todos)
       setTodos(todos)
     }
     fetchTodoAndSetTodos()
@@ -28,7 +27,6 @@ function Todos(props) {
       return
     }
 
-    console.log(props.email)
     const newTodo = await APIHelper.createTodo(todo, props.email)
     setTodos([...todos, newTodo])
   }
@@ -38,7 +36,7 @@ function Todos(props) {
       e.stopPropagation()
       await APIHelper.deleteTodo(id)
       setTodos(todos.filter(({ _id: i }) => id !== i))
-    } catch (err) {}
+    } catch (err) { }
   }
 
   const updateTodo = async (e, id) => {
@@ -49,32 +47,41 @@ function Todos(props) {
     const updatedTodo = await APIHelper.updateTodo(id, payload)
     setTodos(todos.map(todo => (todo._id === id ? updatedTodo : todo)))
   }
-console.log(todos)
+
   return (
     <div className="App">
-      <div>
+      <div id="todoInput">
+        <form className="form">
         <input
           id="todo-input"
           type="text"
           value={todo}
+          autoComplete="off"
           onChange={({ target }) => setTodo(target.value)}
         />
+        <label for="name" class="label-name">
+          <span class="content-name">   </span>
+        </label>
         <button type="button" onClick={createTodo}>
-          Add
+          Add Exercises
         </button>
+        </form>
       </div>
-
-      <ul>
-        {todos.map(({ _id, task, completed }) => { return (
-          <li
-            key={_id}
-            onClick={e => updateTodo(e, _id)}
-            className={completed ? "completed" : ""}
-          >
-            {task} <span onClick={e => deleteTodo(e, _id)}>X</span>
-          </li>
-        )})}
-      </ul>
+      <div id="todoItems">
+        <ul>
+          {todos.map(({ _id, task, completed }) => {
+            return (
+              <li
+                key={_id}
+                onClick={e => updateTodo(e, _id)}
+                className={completed ? "completed" : ""}
+              >
+                {task} <span onClick={e => deleteTodo(e, _id)}>------>REMOVE</span>
+              </li>
+            )
+          })}
+        </ul>
+      </div>
     </div>
   )
 }

@@ -1,5 +1,5 @@
 .navbar {
-    background: #ffffff;
+    background: #3273DC;
     grid-area: nav;
     height: 60px;
     display: flex;
@@ -49,7 +49,7 @@ margin-right:0;
     font-size: 16px;
     border-radius: 50px;
     background: #ffffff;
-    box-shadow: 2px 2px 5px #d9d9d9, -2px -2px 5px #ffffff;
+    box-shadow: 6px 6px 20px rgba(122, 122, 122, 0.2);
     padding: 7px;
   }
   

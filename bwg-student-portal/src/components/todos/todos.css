@@ -2,3 +2,36 @@
     text-decoration: line-through;
     color: gray;
   }
+
+#todoInput, #todoItems {
+  padding: 25px;
+    border-radius: 5px;
+    /* background:white; */
+    background: linear-gradient(
+      to right bottom,
+      rgba(255,255,255, 0.8),
+      rgba(255, 255, 255, 0.5)
+      );
+      margin-bottom: 1.5rem;
+      box-shadow: 6px 6px 20px rgba(122, 122, 122, 0.2);
+}
+
+#todoInput {
+  height: 12vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  font-family: sans-serif; 
+  position: relative;
+  height: 120px;
+}
+
+.form input {
+  width: 100%;
+  height: 40%;
+  padding-top: 20px;
+  border: none;
+}
+
+

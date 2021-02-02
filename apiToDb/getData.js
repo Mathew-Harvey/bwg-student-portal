@@ -6,8 +6,6 @@ const mongodb = require("mongodb");
 var acuity = AcuityScheduling.basic({
   // userId: process.env.ACUITY_USER_ID,
   // apiKey: process.env.ACUITY_API_KEY,
-  userId: "16696944",
-  apiKey: "36fa76dda4beb013aa48228da563f53f",
 
 
 });
@@ -31,7 +29,7 @@ MongoClient.connect(
     const db = client.db(databaseName);
 
     async function refresh() {
-      acuity.request("/appointments?max=6900", async function (err, res, appointments) {
+      acuity.request("/appointments?max=50", async function (err, res, appointments) {
         // console.log(res) 
 
         appointments.map(async (appointment, i) => {
