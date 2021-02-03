@@ -6,7 +6,7 @@ import StopWatch from "../stopwatch/stopwatch";
 import Draggable from "react-draggable";
 
 const Main = (props) => {
-console.log(props.email)
+
   return (
     <main>
       <div className="main__container">
@@ -22,7 +22,7 @@ console.log(props.email)
 
     
         <div className="charts">
-        <Draggable>
+        {/* <Draggable> */}
           <div className="charts__left">
             <div className="trainingTasksTitle">
             <h1>Training Tasks</h1>
@@ -33,7 +33,7 @@ console.log(props.email)
               />
             </div>
           </div>
-          </Draggable>
+          {/* </Draggable> */}
           <Draggable>
           <div className="charts__right">
             <div className="charts__right__cards">

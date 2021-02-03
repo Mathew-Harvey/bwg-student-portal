@@ -49,7 +49,6 @@ main {
   .card {
     padding: 15px;
     border-radius: 5px;
-    /* background:white; */
     background: linear-gradient(
       to right bottom,
       rgba(255,255,255, 0.5),
@@ -66,7 +65,6 @@ main {
   .card_inner {
     padding: 15px;
     border-radius: 5px;
-    /* background:white; */
     background: linear-gradient(
       to right bottom,
       rgba(255,255,255, 0.8),
@@ -122,7 +120,6 @@ main {
   .trainingTasksTitle {
     padding: 25px;
     border-radius: 5px;
-    /* background:white; */
     background: linear-gradient(
       to right bottom,
       rgba(255,255,255, 0.8),
@@ -138,16 +135,12 @@ main {
   .charts__right {
     padding: 25px;
     border-radius: 5px;
-    /* background:white; */
     background: linear-gradient(
       to right bottom,
       rgba(255,255,255, 0.5),
       rgba(255, 255, 255, 0.1)
       );
     backdrop-filter: blur(.8rem);
-    display: flex;
-    align-items: center;
-    justify-content: center;
     box-shadow: 6px 6px 20px rgba(122, 122, 122, 0.2);
     z-index: 2;
   }
@@ -155,7 +148,6 @@ main {
   #chartTitle {
     padding: 25px;
     border-radius: 5px;
-    /* background:white; */
     background: linear-gradient(
       to right bottom,
       rgba(255,255,255, 0.8),
@@ -169,7 +161,6 @@ main {
   #chartContainer {
     padding: 25px;
     border-radius: 5px;
-    /* background:white; */
     background: linear-gradient(
       to right bottom,
       rgba(255,255,255, 0.8),
@@ -217,13 +208,31 @@ main {
   }
   @media only screen and (max-width: 855px) {
     .main__cards {
-      grid-template-columns: 1fr;
-      gap: 10px;
-      margin-bottom: 0;
+
     }
   
     .charts {
       grid-template-columns: 1fr;
       margin-top: 30px;
+    }
+
+    .charts__right {      
+      grid-template-columns: 1fr;
+      gap: 10px;
+      margin-bottom: 0;
+    }
+
+    #chartContainer {    
+      zoom: 50%;
+      grid-template-columns: 1fr;
+      gap: 10px;
+      margin-bottom: 0;
+    }
+
+    .charts__left  {
+      width: 80%;
+      grid-template-columns: 1fr;
+      gap: 10px;
+      margin-bottom: 0;
     }
   }

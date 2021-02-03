@@ -94,7 +94,6 @@ const App = () => {
       if (user) {
         // clearInputs();
         setUser(user);
-        console.log(user)
         setEmail(user.email)
 
         fetch("/username/" + user.email).then((res) => {
@@ -209,7 +208,6 @@ const App = () => {
   }, []);
 
   //login screen
-console.log(email)
   return (
     <div className="App">
       {user ? ( //if user exists render document 'hero' replace with dash board

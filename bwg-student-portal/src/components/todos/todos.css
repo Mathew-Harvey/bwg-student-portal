@@ -18,12 +18,7 @@
 
 #todoInput {
   height: 12vh;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  flex-direction: column;
   font-family: sans-serif; 
-  position: relative;
   height: 120px;
 }
 
