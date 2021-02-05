@@ -2,8 +2,8 @@ import firebase from 'firebase';
 
 // Your web app's Firebase configuration
 var firebaseConfig = {
-    apiKey: "AIzaSyBHIdj6KPxrftUrQ-_QcsNgClXBdokAzVg",
-    authDomain: "bwg-student-portal-dev.firebaseapp.com",
+    apiKey:"AIzaSyBHIdj6KPxrftUrQ-_QcsNgClXBdokAzVg",
+    authDomain:"bwg-student-portal-dev.firebaseapp.com",
     projectId: "bwg-student-portal-dev",
     storageBucket: "bwg-student-portal-dev.appspot.com",
     messagingSenderId: "912139319203",

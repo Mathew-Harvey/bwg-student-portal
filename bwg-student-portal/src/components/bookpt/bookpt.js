@@ -1,5 +1,6 @@
 import React from "react";
-import Iframe from "react-iframe"
+import Iframe from "react-iframe";
+import "./bookpt.css"
 
 const Bookpt = () => {
 

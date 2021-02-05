@@ -1,33 +1,22 @@
-// import React from "react";
+import React from "react";
+import Iframe from "react-iframe"
+import "./bookpt.css"
 
-// import SinglePagePDFViewer from "./components/pdf/single-page";
-// import AllPagesPDFViewer from "./components/pdf/all-pages";
-// import { sampleBase64pdf } from "./sampleBase64pdf";
-// /* This is required only if the project file is located 
-// inside the app. Otherwise you can use the external link of the pdf file*/
-// import handstand from "../handstandebook/handstand.pdf";
+const Handstandebook = () => {
 
-// import "./styles.css";
+    return (
+        <div>
+            <Iframe url="https://www.thebodyweightgym.net/handstand-ebook"
+                position="absolute"
+                width="100%"
+                id="myId"
+                className="myClassname"
+                height="100%"
+                styles={{ height: "25px" }} />
 
-// export default function Handstandebook() {
-//   return (
-//     <div className="App">
-//       <h4>Single Page</h4>
-//       <SinglePagePDFViewer pdf={handstand} />
+        </div>
 
-//       <hr />
+    )
+}
 
-//       <h4>All Pages</h4>
-//       <div className="all-page-container">
-//         <AllPagesPDFViewer pdf={handstand} />
-//       </div>
-
-//       <hr />
-
-//       <h4>Base 64 Single Page</h4>
-//       <SinglePagePDFViewer pdf={sampleBase64pdf} />
-
-//       <hr />
-//     </div>
-//   );
-// }
+export default Handstandebook;

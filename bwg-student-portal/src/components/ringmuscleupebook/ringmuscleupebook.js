@@ -1,12 +1,12 @@
 import React from "react";
 import Iframe from "react-iframe"
-import "./bookClass.css"
+import "./bookpt.css"
 
-const Bookclass = () => {
+const Muscleupebook = () => {
 
     return (
         <div>
-            <Iframe url="https://app.acuityscheduling.com/schedule.php?owner=16696944&appointmentType=category:Classes"
+            <Iframe url="https://www.thebodyweightgym.net/ring-muscle-up-ebook"
                 position="absolute"
                 width="100%"
                 id="myId"
@@ -19,4 +19,4 @@ const Bookclass = () => {
     )
 }
 
-export default Bookclass;
+export default Muscleupebook;

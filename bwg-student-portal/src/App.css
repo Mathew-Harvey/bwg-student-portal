@@ -25,6 +25,7 @@ button {
   padding: 60px;
   margin: auto;
   width: 100%;
+  border-radius: 5rem;
   max-width: 520px;
   min-height: 600px;
   display: flex;
@@ -32,11 +33,18 @@ button {
   justify-content: center;
   background: radial-gradient(
     ellipse at left bottom,
-    rgba(22, 24, 47, 1) 0%,
+    rgb(73, 81, 168) 0%,
     rgba(80, 82, 116, 0.9) 59%,
     rgba(46, 73, 207, 0.9) 100%
   );
   box-shadow: 0 50px 70px -20px rgba(0, 0, 0, 0.8);
+}
+
+.loginLogo {
+  width: 400px;
+  height: auto;
+  position: center;
+  margin-bottom: 100px;
 }
 
 .login .loginContainer label {

@@ -46,7 +46,7 @@ const Sidebar = ({ sidebarOpen, closeSidebar }) => {
       <div className="sidebar__menu">
         <div>
           <nav>
-            <h2>Your Gym</h2>
+           
               <div className="sidebar__link">
               <img id="sidebarIcon" src={dashboard} alt="bookclass" /><Link to="/">Dashboard</Link>
               </div>
@@ -61,6 +61,12 @@ const Sidebar = ({ sidebarOpen, closeSidebar }) => {
               </div>
               <div className="sidebar__link">
               <img id="sidebarIcon" src={online} alt="online" /><Link to="/onlineclass">Join a Online Class</Link>
+              </div>
+              <div className="sidebar__link">
+              <img id="sidebarIcon" src={handstand} alt="online" /><Link to="/handstandebook">The Handstand ebook</Link>
+              </div>
+              <div className="sidebar__link">
+              <img id="sidebarIcon" src={ring} alt="online" /><Link to="/muscleupebook">The Ring Muscle-up ebook</Link>
               </div>
           </nav>
         </div>

@@ -1,23 +1,14 @@
 var AcuityScheduling = require("acuityscheduling");
 const mongodb = require("mongodb");
-
-
-
 var acuity = AcuityScheduling.basic({
   // userId: process.env.ACUITY_USER_ID,
   // apiKey: process.env.ACUITY_API_KEY,
 userId: "16696944",
 apiKey: "36fa76dda4beb013aa48228da563f53f",
-
-
 });
-
 const MongoClient = mongodb.MongoClient;
-
-const connectionURl = "mongodb://localhost:27017/"
-
-
-
+// const connectionURl = "mongodb://localhost:27017/"
+const connectionURl = "mongodb+srv://bwg:iceman79@cluster0.yqfzi.mongodb.net/BWG?retryWrites=true&w=majority"
 const databaseName = "BWG";
 
 MongoClient.connect(
@@ -27,11 +18,9 @@ MongoClient.connect(
     if (error) {
       return console.log("unable to connect to database");
     }
-
     const db = client.db(databaseName);
-
     async function refresh() {
-      acuity.request("/appointments?max=5000", async function (err, res, appointments) {
+      acuity.request("/appointments?max=5", async function (err, res, appointments) {
         // console.log(res) 
 
         appointments.map(async (appointment, i) => {

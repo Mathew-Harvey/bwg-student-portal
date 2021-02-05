@@ -1,4 +1,5 @@
 import React from 'react';
+import logo from './assets/logo.png'
 
 const Login = (props) => {
 
@@ -19,7 +20,9 @@ const Login = (props) => {
 
     return (
         <section className='login'>
-            <div className="loginContainer">
+       
+            <div className="loginContainer"> 
+            <div ><img src={logo} className="loginLogo" /></div>
                 <label>Email Address</label>
                 <input
                     type="text"
