@@ -21,7 +21,7 @@ app.use(express.json())
 
 mongoose
   .connect(
-    process.env.MONGODB_URI || "mongodb://localhost:27017/BWG",
+    process.env.MONGODB_URI || "mongodb+srv://bwg-portal:me2penders2000@cluster0.yqfzi.mongodb.net/BWG?retryWrites=true&w=majority",
     {
       useFindAndModify: true,
       useUnifiedTopology: true,
