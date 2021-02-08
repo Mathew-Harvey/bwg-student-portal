@@ -4,11 +4,13 @@ import Chart from "../charts/Chart"
 import Todos from "../todos/todos";
 import StopWatch from "../stopwatch/stopwatch";
 import Draggable from "react-draggable";
+import Stopwatch from "../stopwatch/stopwatch"
 
 const Main = (props) => {
 
   return (
     <main>
+   
       <div className="main__container">
         {/* <!-- MAIN TITLE STARTS HERE --> */}
 
@@ -55,9 +57,10 @@ const Main = (props) => {
             </div>
 
           </div>
+          
           </Draggable>
         </div>
-        
+      
         {/* <!-- MAIN CARDS STARTS HERE --> */}
         <div className="main__cards">
           <div className="card">
@@ -75,6 +78,11 @@ const Main = (props) => {
           </div>
         </div>
       </div>
+      <Draggable>
+          <div className="stopwatchDiv">
+            <StopWatch></StopWatch>
+          </div>
+        </Draggable>
       <div className='circle1'></div>
       <div className='circle2'></div>
 

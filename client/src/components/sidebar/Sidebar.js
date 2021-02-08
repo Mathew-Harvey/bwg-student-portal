@@ -70,7 +70,7 @@ const Sidebar = ({ sidebarOpen, closeSidebar }) => {
               </div>
           </nav>
         </div>
-        <div id="logout">
+        <div >
           <button id="logout" onClick={handleLogout}>Logout</button>
         </div>
       </div>

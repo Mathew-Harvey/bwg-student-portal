@@ -11,13 +11,13 @@ const Navbar = ({ sidebarOpen, openSidebar }) => {
         <i className="fa fa-bars" aria-hidden="true"></i>
       </div>
       <div className="navbar__right">
-        <a href="#">
+        {/* <a href="#">
           <i className="fa fa-stopwatch" aria-hidden="true"></i>
         </a>
       
         <a href="#">
           <i className="fa fa-chess-clock" aria-hidden="true" tooltip = "metronome"></i>
-        </a>
+        </a> */}
 
       </div>
     </nav>

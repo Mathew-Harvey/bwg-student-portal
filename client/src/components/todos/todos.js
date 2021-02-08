@@ -62,7 +62,7 @@ function Todos(props) {
         <label for="name" class="label-name">
           <span class="content-name">   </span>
         </label>
-        <button type="button" onClick={createTodo}>
+        <button type="button" id="addExerciseBtn" onClick={createTodo}>
           Add Exercises
         </button>
         </form>
@@ -76,7 +76,7 @@ function Todos(props) {
                 onClick={e => updateTodo(e, _id)}
                 className={completed ? "completed" : ""}
               >
-                {task} <span onClick={e => deleteTodo(e, _id)}>------>REMOVE</span>
+                {task} <span  onClick={e => deleteTodo(e, _id)}><button id="todoBtn">X</button></span>
               </li>
             )
           })}

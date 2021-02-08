@@ -28,6 +28,7 @@
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.1",
+    "react-stopwatch-timer": "^1.0.0",
     "react-vis": "^1.11.7",
     "save": "^2.4.0",
     "web-vitals": "^0.2.4"
