@@ -12,7 +12,8 @@ const Handstandebook = () => {
                 id="myId"
                 className="myClassname"
                 height="100%"
-                styles={{ height: "25px" }} />
+                styles={{ height: "25px" }}
+                scrolling="yes" />
 
         </div>
 

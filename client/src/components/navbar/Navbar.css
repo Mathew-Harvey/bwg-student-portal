@@ -14,17 +14,10 @@
   }
   
   .nav_icon > i {
-    font-size: 26px;
+    font-size: 36px;
     color: #a5aaad;
-  }
-  
-  /* .navbar__left > a {
-    margin-right: 30px;
-    text-decoration: none;
-    color: #a5aaad;
-    font-size: 15px;
-    font-weight: 700;
-  } */
+  } 
+
   
   .navbar__left .active_link {
     color: #265acc;

@@ -9,7 +9,13 @@
     padding: 20px;
     -webkit-transition: all 0.5s;
     transition: all 0.5s;
+    /* z-index: 10; */
+ 
   }
+
+p:hover {
+  color: #3273DC
+}
   
   .sidebar__title {
     display: flex;
@@ -19,8 +25,14 @@
     margin-bottom: 30px;
   
   }
+.logo {
+    width: 15rem;
+    height: auto;
+}
+
   
   .sidebar__img {
+    
     display: flex;
     align-items: center;
   }
@@ -95,10 +107,14 @@
   }
 
   #sidebarIcon { 
-    width: 25px;
+    width: 45px;
     height: auto;
     margin-top: 10%;
     padding-right: 10%;
+  }
+
+  a {
+    margin-bottom: 50px;
   }
  
   .sidebar_responsive {
@@ -116,4 +132,18 @@
     .sidebar__title > i {
       display: inline;
     }
+    .logo{
+      display: block;
+    }
+
+
+  }
+
+  @media only screen and (max-width: 1200px) {
+    .logo{
+      display: none;
+    }
+
+
+
   }

@@ -33,9 +33,9 @@ const Sidebar = ({ sidebarOpen, closeSidebar }) => {
 
     <div className={sidebarOpen ? "sidebar_responsive" : ""} id="sidebar">
       <div className="sidebar__title">
-        <div className="sidebar__img">
-          <img src={logo} alt="logo" />
-        </div>
+     
+          <img src={logo} alt="logo" className="logo" />
+     
         <i
           onClick={() => closeSidebar()}
           className="fa fa-times"
@@ -48,25 +48,25 @@ const Sidebar = ({ sidebarOpen, closeSidebar }) => {
           <nav>
            
               <div className="sidebar__link">
-              <img id="sidebarIcon" src={dashboard} alt="bookclass" /><Link to="/">Dashboard</Link>
+              <Link to="/"><p><img id="sidebarIcon" src={dashboard} alt="bookclass" />Dashboard</p></Link>
               </div>
               <div className="sidebar__link">
-              <img id="sidebarIcon" src={bookclass} alt="bookclass" /><Link to="/bookclass">Book a class</Link>
+              <Link to="/bookclass"><p><img id="sidebarIcon" src={bookclass} alt="bookclass" />Book a class</p></Link>
               </div>
               <div className="sidebar__link">
-              <img id="sidebarIcon" src={personalTrainer} alt="bookPT" /><Link to="/bookpt">Book a PT</Link>
+              <Link to="/bookpt"><p><img id="sidebarIcon" src={personalTrainer} alt="bookPT" />Book a PT</p></Link>
               </div>
               <div className="sidebar__link">
-              <img id="sidebarIcon" src={timetable1} alt="timetable" /><Link to="/timetable">View Timetable</Link>
+              <Link to="/timetable"><p><img id="sidebarIcon" src={timetable1} alt="timetable" />View Timetable</p></Link>
               </div>
               <div className="sidebar__link">
-              <img id="sidebarIcon" src={online} alt="online" /><Link to="/onlineclass">Join a Online Class</Link>
+              <Link to="/onlineclass"><p><img id="sidebarIcon" src={online} alt="online" />Join a Online Class</p></Link>
               </div>
               <div className="sidebar__link">
-              <img id="sidebarIcon" src={handstand} alt="online" /><Link to="/handstandebook">The Handstand ebook</Link>
+              <Link to="/handstandebook"><p><img id="sidebarIcon" src={handstand} alt="online" />The Handstand</p></Link>
               </div>
               <div className="sidebar__link">
-              <img id="sidebarIcon" src={ring} alt="online" /><Link to="/muscleupebook">The Ring Muscle-up ebook</Link>
+              <Link to="/muscleupebook"><p><img id="sidebarIcon" src={ring} alt="online" />The Ring Muscle-up</p></Link>
               </div>
           </nav>
         </div>
