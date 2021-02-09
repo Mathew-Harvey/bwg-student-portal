@@ -8,3 +8,34 @@
   width: 300px !important;
   height: 300px !important;
 }
+#timerdisplay {
+  font-size: 2rem;
+  position: absolute;
+  left: 50%;
+  top: 30%;
+  transform: translate(-50%, -50%);
+}
+#stopwatchDiv {
+  padding-top: 30px;
+  text-align: center;
+}
+
+#stopwatchBtn {
+  text-align: center;
+  background-color: #3273DC;
+  border: none;
+  outline: none;
+  width: 5%;
+  padding: 3px 3px 3px 3px; 
+  margin-left: 5px;
+  height: 60px;
+  width: 60px;
+
+  border: 1px solid white;
+  border-radius: 50px;  
+  color: #fff;
+  font-size: 12px;
+  letter-spacing: 1px;
+  /* background: #3273DC; */
+  cursor: pointer;
+}

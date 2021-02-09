@@ -30,7 +30,7 @@ const Stopwatch = () => {
 >
     {({ start, resume, pause, stop, reset, timerState }) => (
         <React.Fragment>
-            <div>
+            <div id="timerdisplay">
 
                 <Timer.Minutes /> min :
                 <Timer.Seconds /> sec
@@ -39,11 +39,13 @@ const Stopwatch = () => {
             {/* <div>{timerState}</div> */}
             <br />
             <div>
-                <button onClick={start}>Start</button>
-                <button onClick={pause}>Pause</button>
-                <button onClick={resume}>Resume</button>
-                <button onClick={stop}>Stop</button>
-                <button onClick={reset}>Reset</button>
+                <div id="stopwatchDiv">
+                <button id="stopwatchBtn" onClick={start}>Start</button>
+                <button id="stopwatchBtn" onClick={pause}>Pause</button>
+                <button id="stopwatchBtn" onClick={resume}>Resume</button>
+                <button id="stopwatchBtn" onClick={stop}>Stop</button>
+                <button id="stopwatchBtn"onClick={reset}>Reset</button>
+                </div>
             </div>
         </React.Fragment>
     )}

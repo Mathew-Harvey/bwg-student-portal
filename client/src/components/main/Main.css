@@ -72,23 +72,9 @@ main {
     width: 300px !important;
     height: 300px !important;
   }
-  
-  .stopwatchDiv {
-    padding: 15px;
-    height: 350px;
-    width: 350px;
-    border-radius: 5px;
-    background: linear-gradient(
-      to right bottom,
-      rgba(255,255,255, 0.5),
-      rgba(255, 255, 255, 0.1)
-      );
-    backdrop-filter: blur(.8rem);
-    display: flex;
-    align-items:baseline;
-    justify-content: center;
-    box-shadow: 6px 6px 20px rgba(122, 122, 122, 0.2);
-    z-index: 150!important;
+ 
+  #stopwatchDiv {
+margin-bottom: 15px;
   }
   .card_inner {
     padding: 15px;

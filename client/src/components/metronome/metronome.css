@@ -1,0 +1,19 @@
+#metronomeBtn {
+    text-align: center;
+    background-color: #3273DC;
+    border: none;
+    outline: none;
+    width: 5%;
+    padding: 3px 3px 3px 3px; 
+    margin-left: 5px;
+    height: 60px;
+    width: 60px;
+  
+    border: 1px solid white;
+    border-radius: 50px;  
+    color: #fff;
+    font-size: 12px;
+    letter-spacing: 1px;
+    /* background: #3273DC; */
+    cursor: pointer;
+  }
