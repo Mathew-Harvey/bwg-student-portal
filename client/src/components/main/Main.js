@@ -86,11 +86,12 @@ const Main = (props) => {
             </div>
           </div>
         </div>
-      </div>
-     
-        <div id="photoDiv" className="charts__right">
+          
+        <div  className="charts__right">
           <Photo></Photo>
         </div>
+      </div>
+   
      
 
 
