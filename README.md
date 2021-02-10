@@ -2,7 +2,7 @@
 
 [![Storybook](https://cdn.jsdelivr.net/gh/storybookjs/brand@master/badge/badge-storybook.svg)](https://sympli-rjs.netlify.app/storybook/index.html)
 [![Maintainability](https://api.codeclimate.com/v1/badges/96b0263ab7a3c9513e4a/maintainability)](https://codeclimate.com/github/Mathew-Harvey/bwg-student-portal)
-[![Known Vulnerabilities](https://snyk.io/test/github/jacktator/Sympli_RJS/badge.svg)](https://app.snyk.io/org/mathew-harvey/project/5d2357f0-6407-4164-a901-ed307dd86190/)
+
 
 
 React Application which requests Start Wars Characters, an technical interview for Sympli.
