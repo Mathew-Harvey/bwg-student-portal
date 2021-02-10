@@ -16,7 +16,7 @@
 - [Questions](#Questions-)
 - [Application ScreenShots](#Application-ScreenShots-)
 ## Demo 💻
-![Demo Video](/assets/studentportal)
+![Demo Video](/assets/studentportal.gif)
 ## Deployed Application 💻 : https://bwg-student-portal.herokuapp.com/
 ## Description 🧐
 This project is a dashboard for students of the Bodyweight Gym, a small studio gym located in Perth, Western Australia. The application brings together useful functionality to students and clients in to one place, presenting each student with a customised dashboard displaying information specific to their practice. 
