@@ -16,6 +16,7 @@ import Timetable from "./components/timetable/timetable"
 import Onlineclass from "./components/onlineclasses/onlineclass"
 import Handstandebook from "./components/handstandebook/handstandebook"
 import Muscleupebook from "./components/ringmuscleupebook/ringmuscleupebook"
+import Chat from "./components/chat/chat"
 
 
 const Dashboard = ({ handleLogout, email, name, hoursTrained, sevenDays, bodyweightClass, mobilityClass, caliClass, begClass, handstandClass }) => {
@@ -64,6 +65,9 @@ const Dashboard = ({ handleLogout, email, name, hoursTrained, sevenDays, bodywei
                     </Route>
                     <Route exact path="/onlineclass">
                         <Onlineclass />
+                    </Route>
+                    <Route exact path="/chat">
+                        <Chat />
                     </Route>
                     <Route exact path="/handstandebook">
                         <Handstandebook />
