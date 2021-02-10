@@ -63,9 +63,9 @@ const Sidebar = ({ sidebarOpen, closeSidebar }) => {
               <div className="sidebar__link">
               <Link to="/onlineclass"><p><img id="sidebarIcon" src={online} alt="online" />Join a Online Class</p></Link>
               </div>
-              <div className="sidebar__link">
+              {/* <div className="sidebar__link">
               <Link to="/chat"><p><img id="sidebarIcon" src={chat} alt="chat" />Join a chat room</p></Link>
-              </div>
+              </div> */}
               <div className="sidebar__link">
               <Link to="/handstandebook"><p><img id="sidebarIcon" src={handstand} alt="online" />The Handstand</p></Link>
               </div>
