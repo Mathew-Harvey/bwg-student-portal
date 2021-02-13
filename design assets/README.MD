@@ -8,7 +8,7 @@
 ## Demo 💻
 ![Demo Video](/assets/studentportal.gif)
 ## Demo 💻
-![Demo Video](/design assets/8.jpg)
+![Demo Video](/design-assets/8.jpg)
 ## Demo 💻
 ![Demo Video](/assets/studentportal.gif)
 ## Demo 💻
