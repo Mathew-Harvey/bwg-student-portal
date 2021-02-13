@@ -7,9 +7,6 @@
 
 ## Demo 💻
 ![Demo Video](/assets/studentportal.gif)
-## Demo 💻
-(/design-assets/8.jpg)
-
 
 ## Deployed Application 💻 : https://bwg-student-portal.herokuapp.com/
 
