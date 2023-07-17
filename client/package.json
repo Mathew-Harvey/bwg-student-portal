@@ -15,7 +15,7 @@
     "firebase": "^8.2.4",
     "mobiscroll": "^3.0.0-beta6",
     "moment": "^2.29.1",
-    "mongoose": "^5.11.14",
+    "mongoose": "^5.13.20",
     "pdf-viewer-reactjs": "^2.2.2",
     "react": "^17.0.1",
     "react-avatar-uploader": "^1.0.3",
