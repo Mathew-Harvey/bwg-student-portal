@@ -31,7 +31,7 @@
     "react-pdf": "^5.1.0",
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "4.0.1",
+    "react-scripts": "5.0.0",
     "react-upload-gallery": "^0.2.0",
     "react-vis": "^1.11.7",
     "save": "^2.4.0",
