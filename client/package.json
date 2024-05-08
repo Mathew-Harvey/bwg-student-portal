@@ -28,7 +28,7 @@
     "react-metronome-hook": "^1.0.5",
     "react-native-sound": "^0.11.0",
     "react-native-use-sound": "^1.2.0",
-    "react-pdf": "^5.1.0",
+    "react-pdf": "^7.7.3",
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.1",
